@@ -1,0 +1,21 @@
+.category {
+    margin-top: 20px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.queue-item {
+    cursor: pointer;
+}
+
+.queue-item:hover {
+    background-color: #f0f0f0;
+}
+
+.fortune-wheel {
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko sta placa :)</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5">Ko sta placa :)</h1>
+        <div class="form-group mt-4">
+            <input type="text" id="categoryName" class="form-control" placeholder="Enter category name">
+            <button class="btn btn-primary mt-2" onclick="addCategory()">Dodaj kategoriju</button>
+        </div>
+        <div id="categories" class="mt-4"></div>
+    </div>
+    <div class="container">
+        <div class="fortune-wheel mt-5">
+            <h2>Gde jesti</h2>
+            <div class="form-group">
+                <input type="text" id="placeName" class="form-control" placeholder="Enter place to eat">
+                <button class="btn btn-secondary mt-2" onclick="addPlace()">Add Place</button>
+            </div>
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+            <button class="btn btn-success mt-2" onclick="spinWheel()">Spin Wheel</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

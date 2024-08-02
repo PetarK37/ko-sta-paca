@@ -1,6 +1,20 @@
 let categories = [];
 let places = [];
 
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBtlClR4zBEjd3A1uFr-IN825DEcIoIHeA",
+    authDomain: "ko-sta-jede.firebaseapp.com",
+    projectId: "ko-sta-jede",
+    storageBucket: "ko-sta-jede.appspot.com",
+    messagingSenderId: "298337272851",
+    appId: "1:298337272851:web:6c8d45698c5c837d60abe6",
+    databaseURL: "https://ko-sta-jede-default-rtdb.firebaseio.com/"
+};
+
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
 document.addEventListener('DOMContentLoaded', (event) => {
     loadCategories();
     loadPlaces();
@@ -36,16 +50,20 @@ function moveQueueItemToBottom(categoryIndex, itemIndex) {
 }
 
 function saveCategories() {
-    localStorage.setItem('categories', JSON.stringify(categories));
+    database.ref('categories').set(categories)
+        .catch(error => console.error("Error saving categories: ", error));
 }
 
 function loadCategories() {
-    const savedCategories = localStorage.getItem('categories');
-    if (savedCategories) {
-        categories = JSON.parse(savedCategories);
-    }
+    database.ref('categories').once('value', (snapshot) => {
+        if (snapshot.exists()) {
+            categories = snapshot.val() || [];
+            renderCategories();
+        }
+    }).catch(error => {
+        console.error("Error loading categories: ", error);
+    });
 }
-
 function addPlace() {
     const placeName = document.getElementById('placeName').value;
     if (placeName) {

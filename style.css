@@ -19,3 +19,16 @@
 .fortune-wheel {
     text-align: center;
 }
+
+.wheel-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.arrow {
+    font-size: 44px;
+    color: #000;
+}

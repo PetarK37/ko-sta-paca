@@ -102,11 +102,11 @@ function renderCategories() {
         queueInput.type = 'text';
         queueInput.id = `queueItemName-${categoryIndex}`;
         queueInput.className = 'form-control';
-        queueInput.placeholder = `Add to ${category.name}`;
+        queueInput.placeholder = `Dodaj u ${category.name}`;
 
         const addButton = document.createElement('button');
         addButton.className = 'btn btn-secondary mt-2';
-        addButton.textContent = 'Add';
+        addButton.textContent = 'Dodaj';
         addButton.onclick = () => addQueueItem(categoryIndex);
 
         queueForm.appendChild(queueInput);
@@ -155,11 +155,11 @@ function renderCategories() {
         queueInput.type = 'text';
         queueInput.id = `queueItemName-${categoryIndex}`;
         queueInput.className = 'form-control';
-        queueInput.placeholder = `Add to ${category.name}`;
+        queueInput.placeholder = `Dodaj u ${category.name}`;
 
         const addButton = document.createElement('button');
         addButton.className = 'btn btn-secondary mt-2';
-        addButton.textContent = 'Add';
+        addButton.textContent = 'Dodaj';
         addButton.onclick = () => addQueueItem(categoryIndex);
 
         queueForm.appendChild(queueInput);
